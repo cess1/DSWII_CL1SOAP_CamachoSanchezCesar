@@ -1,4 +1,4 @@
-package pe.edu.cibertec.DSWII_CL1SOAP_CamachoSanchezCesar.endpoint;
+package pe.edu.cibertec.DSWII_CL1SOAP_CamachoSanchezCesar.api_soap.configuration.endpoint;
 
 import generated.CalcularCostoEstacionamientoRequest;
 import generated.CalcularCostoEstacionamientoResponse;
@@ -6,7 +6,7 @@ import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
-import pe.edu.cibertec.DSWII_CL1SOAP_CamachoSanchezCesar.service.EstacionamientoService;
+import pe.edu.cibertec.DSWII_CL1SOAP_CamachoSanchezCesar.api_soap.configuration.service.EstacionamientoService;
 
 @Endpoint
 public class EstacionamientoEndpoint {
