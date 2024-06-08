@@ -1,0 +1,59 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://www.cibertec.edu.pe/ws/objects"
+           targetNamespace="http://www.cibertec.edu.pe/ws/objects"
+           elementFormDefault="qualified">
+    <!--Obtener autores-->
+    <xs:element name="getAutoresRequest">
+        <xs:complexType>
+            <xs:sequence />
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAutoresResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="autores" type="tns:autorws"
+                            maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!--Buscar autor por ID-->
+    <xs:element name="getAutorRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAutorResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="autor" type="tns:autorws" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!--Guardar y actualizar autor-->
+    <xs:element name="postAutorRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="autor" type="tns:autorws" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="postAutorResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="autor" type="tns:autorws" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="autorws">
+        <xs:sequence>
+            <xs:element name="idAutor" type="xs:int"/>
+            <xs:element name="nomAutor" type="xs:string"/>
+            <xs:element name="apeAutor" type="xs:string"/>
+            <xs:element name="fechNacAutor" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

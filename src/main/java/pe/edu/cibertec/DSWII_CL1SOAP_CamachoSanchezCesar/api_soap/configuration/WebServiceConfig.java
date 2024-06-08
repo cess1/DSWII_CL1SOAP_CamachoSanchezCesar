@@ -64,6 +64,22 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         return new SimpleXsdSchema(new ClassPathResource("xsd/dni.xsd"));
     }
 
+    // Configuración para el servicio de obtener números pares
+    @Bean(name = "numerosPares")
+    public DefaultWsdl11Definition numerosParesWsdl(XsdSchema numerosParesSchema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("NumerosParesPort");
+        wsdl11Definition.setLocationUri("/ws");
+        wsdl11Definition.setTargetNamespace("http://www.cibertec.edu.pe/ws/objects");
+        wsdl11Definition.setSchema(numerosParesSchema);
+        return wsdl11Definition;
+    }
+
+    @Bean
+    public XsdSchema numerosParesSchema() {
+        return new SimpleXsdSchema(new ClassPathResource("xsd/numerosPares.xsd"));
+    }
+
     // Configuración del servlet de Spring WS
     @Bean
     public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext applicationContext) {
@@ -72,4 +88,37 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         servlet.setTransformWsdlLocations(true);
         return new ServletRegistrationBean<>(servlet, "/ws/*");
     }
+    // Configuración para el servicio de almacenamiento
+    @Bean(name = "descuento")
+    public DefaultWsdl11Definition descuentoWsdl(XsdSchema almacenSchema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("AlmacenPort");
+        wsdl11Definition.setLocationUri("/ws");
+        wsdl11Definition.setTargetNamespace("http://cibertec.edu.pe/objects");
+        wsdl11Definition.setSchema(almacenSchema);
+        return wsdl11Definition;
+    }
+
+    @Bean
+    public XsdSchema almacenSchema() {
+        return new SimpleXsdSchema(new ClassPathResource("xsd/descuento.xsd"));
+    }
+
+    // Configuración para el servicio de Autor
+    @Bean(name = "autor")
+    public DefaultWsdl11Definition autorWsdl(XsdSchema autorSchema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("AutorPort");
+        wsdl11Definition.setLocationUri("/ws");
+        wsdl11Definition.setTargetNamespace("http://www.cibertec.edu.pe/ws/objects");
+        wsdl11Definition.setSchema(autorSchema);
+        return wsdl11Definition;
+    }
+
+    @Bean
+    public XsdSchema autorSchema() {
+        return new SimpleXsdSchema(new ClassPathResource("xsd/autor.xsd"));
+    }
+
+
 }

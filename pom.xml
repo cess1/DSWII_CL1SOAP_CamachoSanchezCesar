@@ -83,7 +83,7 @@
 				</executions>
 				<configuration>
 					<sources>
-						<source>${project.basedir}/src/main/resources/xsd/estacionamiento.xsd</source>
+						<source>${project.basedir}/src/main/resources/xsd/numerosPares.xsd</source>
 					</sources>
 					<outputDirectory>src/main/java</outputDirectory>
 					<clearOutputDir>false</clearOutputDir>
