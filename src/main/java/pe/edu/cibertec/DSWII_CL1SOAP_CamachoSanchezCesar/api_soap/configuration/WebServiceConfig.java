@@ -33,7 +33,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     }
 
     // Configuración para el servicio del alumno
-    @Bean(name = "alumno") // Cambiado de "alumno" a "alumno"
+    @Bean(name = "alumno")
     public DefaultWsdl11Definition alumnoWsdl(XsdSchema alumnoSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("AlumnoPort");
@@ -43,11 +43,26 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         return wsdl11Definition;
     }
 
-    @Bean // Cambiado de "alumnoSchema" a "notasSchema"
+    @Bean
     public XsdSchema alumnoSchema() {
         return new SimpleXsdSchema(new ClassPathResource("xsd/notas.xsd"));
     }
 
+    // Configuración para el servicio del DNI
+    @Bean(name = "dni")
+    public DefaultWsdl11Definition dniWsdl(XsdSchema dniSchema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("DniPort");
+        wsdl11Definition.setLocationUri("/ws");
+        wsdl11Definition.setTargetNamespace("http://www.cibertec.edu.pe/ws/objects");
+        wsdl11Definition.setSchema(dniSchema);
+        return wsdl11Definition;
+    }
+
+    @Bean
+    public XsdSchema dniSchema() {
+        return new SimpleXsdSchema(new ClassPathResource("xsd/dni.xsd"));
+    }
 
     // Configuración del servlet de Spring WS
     @Bean
