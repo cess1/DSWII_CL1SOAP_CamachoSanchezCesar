@@ -1,0 +1,17 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="calcularCostoEstacionamientoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="horas" type="xs:int"/>
+                <xs:element name="minutos" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="calcularCostoEstacionamientoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="costo" type="xs:double"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,19 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="calcularPromedioRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nota1" type="xs:double"/>
+                <xs:element name="nota2" type="xs:double"/>
+                <xs:element name="nota3" type="xs:double"/>
+                <xs:element name="nota4" type="xs:double"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="calcularPromedioResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="promedio" type="xs:double"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

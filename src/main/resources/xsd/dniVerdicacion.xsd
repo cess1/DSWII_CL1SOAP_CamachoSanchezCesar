@@ -1,0 +1,16 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="necesitaDNIRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="añoNacimiento" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="necesitaDNIResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="necesitaDNI" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
